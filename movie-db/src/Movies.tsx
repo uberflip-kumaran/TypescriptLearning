@@ -1,8 +1,13 @@
 import React from 'react'
-import { useGlobalContext } from './context'
+import { useGlobalContext, MovieProps } from './context'
 import { Link } from 'react-router-dom'
 const url =
   'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
+
+interface MoviesType {
+  movies: movie;
+  isLoading: Boolean;
+}
 
 const Movies = () => {
   const { movies, isLoading } = useGlobalContext()
@@ -12,7 +17,7 @@ const Movies = () => {
   }
   return (
     <section className='movies'>
-      {movies.map((movie) => {
+      {movies.map((movie: string) => {
         const { imdbID: id, Poster: poster, Title: title, Year: year } = movie
 
         return (
