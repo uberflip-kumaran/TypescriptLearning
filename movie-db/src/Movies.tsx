@@ -13,10 +13,11 @@ const Movies = () => {
   return (
     <section className='movies'>
       {movies?.map((movie:MovieProps) => {
-        const { imdID:imdID, Poster: poster, Title: title, Year: year } = movie
+        console.log(movie);
+        const { imdbID:imdbID, Poster: poster, Title: title, Year: year } = movie
 
         return (
-          <Link to={`/movies/${imdID}`} key={imdID} className='movie'>
+          <Link to={`/movies/${imdbID}`} key={imdbID} className='movie'>
             <article>
               <img src={poster === 'N/A' ? url : poster} alt={title} />
               <div className='movie-info'>

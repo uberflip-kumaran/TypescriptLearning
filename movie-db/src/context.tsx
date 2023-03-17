@@ -18,7 +18,7 @@ interface AppContextProps {
 }
 
 export interface MovieProps {
-  imdID: string;
+  imdbID: string;
   Title: string;
   Year: string;
   Poster: string;
