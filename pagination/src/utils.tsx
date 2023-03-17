@@ -1,4 +1,9 @@
-const paginate = (followers) => {
+
+import {FollowerProp} from './Follower';
+
+
+
+const paginate = (followers:[FollowerProp]) => {
   const itemsPerPage = 10
   const numberOfPages = Math.ceil(followers.length / itemsPerPage)
 
