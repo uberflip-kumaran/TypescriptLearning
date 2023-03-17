@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`
 
-const useFetch = (urlParams) => {
+const useFetch = (urlParams: string) => {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState({ show: false, msg: '' })
   const [data, setData] = useState(null)
-  const fetchMovies = async (url) => {
+  const fetchMovies = async (url: string) => {
     setIsLoading(true)
     try {
       const response = await fetch(url)
