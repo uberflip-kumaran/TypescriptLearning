@@ -1,10 +1,13 @@
 import React, { useState, useContext, useEffect, FC, createContext } from 'react'
 // make sure to use https
 import useFetch from './useFetch'
-//export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.REACT_APP_MOVIE_API_KEY}`
+//const path = require('path')
+//require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
+//export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
+export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=388f5944`;
 
-export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=388f5944&i=tt1285016`;
+//export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=388f5944&i=tt1285016`;
 
 interface AppContextProps {
   isLoading: boolean;
@@ -17,8 +20,8 @@ interface AppContextProps {
 export interface MovieProps {
   imdID: string;
   Title: string;
-  year: string;
-  poster: string;
+  Year: string;
+  Poster: string;
 }
 
 interface Error  {
