@@ -12,7 +12,7 @@ export const useFetch = () => {
     setData(paginate(data))
     setLoading(false)
   }
-
+//
   useEffect(() => {
     getProducts()
   }, [])
