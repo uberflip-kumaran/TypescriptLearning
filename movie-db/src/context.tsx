@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 // make sure to use https
 import useFetch from "./useFetch";
 import { ContentProps, ChildrenType } from "./types";
-export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=388f5944`;
 
 const AppContext = React.createContext<ContentProps>({
   isLoading: false,
@@ -15,7 +14,6 @@ const AppContext = React.createContext<ContentProps>({
   setQuery: () => {},
 });
 
-// what to name children?
 const AppProvider = ({ children }: ChildrenType) => {
   const [query, setQuery] = useState<string>("batman");
   const { isLoading, error, data: movies } = useFetch(`&s=${query}`);

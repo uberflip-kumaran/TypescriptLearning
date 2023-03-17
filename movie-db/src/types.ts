@@ -7,22 +7,16 @@ export interface ContentProps {
 }
 
 export interface MovieType {
-  imdbID: number;
+  imdbID?: string;
   Poster: string;
   Title: string;
+  Plot: string;
   Year: number;
 }
 
 export interface ErrorProps {
   show: boolean;
   msg: string;
-}
-
-export interface SingleMovieType {
-  Poster: string;
-  Title: string;
-  Plot: string;
-  Year: number;
 }
 
 export interface ChildrenType {

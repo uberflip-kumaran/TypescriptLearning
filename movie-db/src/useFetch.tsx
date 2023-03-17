@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { ErrorProps, SingleMovieType } from "./types";
+import { ErrorProps, MovieType } from "./types";
 // installed types
 const API_ENDPOINT = `https://www.omdbapi.com/?apikey=388f5944`;
+// don't have access
+console.log(import.meta.env.VITE_APP_MOVIE_API_KEY);
 
 const useFetch = (urlParams: string) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -15,7 +17,7 @@ const useFetch = (urlParams: string) => {
       const data = await response.json();
 
       if (data.Response === "True") {
-        setData(data.Search || data);
+        setData(data.Search || data.search);
 
         setError({ show: false, msg: "" });
       } else {
