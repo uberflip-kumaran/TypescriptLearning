@@ -6,8 +6,8 @@ const API_ENDPOINT = `https://www.omdbapi.com/?apikey=388f5944`;
 const useFetch = (urlParams: string) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<ErrorProps>({ show: false, msg: "" });
-  // what do I set this to
-  const [data, setData] = useState(null);
+  // TODO: set data type
+  const [data, setData] = useState<any>(null);
   const fetchMovies = async (url: string): Promise<void> => {
     setIsLoading(true);
     try {
