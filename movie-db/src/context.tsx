@@ -8,7 +8,7 @@ export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=388f5944&i=tt128501
 
 interface AppContextProps {
   isLoading: boolean;
-  error: string | null;
+  error: Error;
   movies: null | MovieProps[];
   query: string;
   setQuery: React.Dispatch<React.SetStateAction<string>>;
@@ -21,10 +21,14 @@ export interface MovieProps {
   poster: string;
 }
 
+interface Error  {
+  show: boolean;
+  msg: string;
+}
 
 const AppContext = React.createContext<AppContextProps>({
   isLoading: false,
-  error: null,
+  error: {show: false, msg: ''},
   movies: null,
   query: '',
   setQuery: () => {},
@@ -40,7 +44,7 @@ interface ChildrenProps {
 const AppProvider = ({ children, ...Childrenprops }:ChildrenProps) => {
   const [query, setQuery] = useState<string>('batman');
   const { isLoading, error, data: movies } = useFetch(`&s=${query}`);
-  const value: AppContextProps = {isLoading, error:null, movies, query, setQuery};
+  const value: AppContextProps = {isLoading, error, movies, query, setQuery};
   return (
     <AppContext.Provider value={value}>
       {children}

@@ -20,7 +20,7 @@
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
   },
-  "resolutions":{
+  "resolutions": {
     "react-router-dom": "6.8.0",
     "react-router": "6.8.0"
   }

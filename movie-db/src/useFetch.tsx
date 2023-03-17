@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react'
 const API_ENDPOINT = `https://www.omdbapi.com/?apikey=388f5944&i=tt1285016`
 
+interface ErrorProps {
+  show: boolean;
+  msg: string;
+}
+
+const errorValue: ErrorProps = {
+  show: false,
+  msg: ''
+};
+
 const useFetch = (urlParams:string) => {
   const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState({ show: false, msg: '' })
+  const [error, setError] = useState(errorValue)
   const [data, setData] = useState(null)
   const fetchMovies = async (url:string) => {
     setIsLoading(true)
@@ -14,7 +24,7 @@ const useFetch = (urlParams:string) => {
       if (data.Response === 'True') {
         setData(data.Search || data)
 
-        setError({ show: false, msg: '' })
+        setError(errorValue)
       } else {
         setError({ show: true, msg: data.Error })
       }
