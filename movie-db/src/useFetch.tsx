@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { ErrorProps, MovieType } from "./types";
 // installed types
-const API_ENDPOINT = `https://www.omdbapi.com/?apikey=388f5944`;
-// don't have access
-console.log(import.meta.env.VITE_APP_MOVIE_API_KEY);
+const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${
+  import.meta.env.VITE_APP_MOVIE_API_KEY
+}`;
 
 const useFetch = (urlParams: string) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
