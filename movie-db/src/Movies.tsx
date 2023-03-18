@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGlobalContext } from './context'
+import { useGlobalContext, MovieType } from './context'
 import { Link } from 'react-router-dom'
 const url =
   'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
@@ -12,7 +12,7 @@ const Movies = () => {
   }
   return (
     <section className='movies'>
-      {movies.map((movie) => {
+      {movies?.map((movie:MovieType) => {
         const { imdbID: id, Poster: poster, Title: title, Year: year } = movie
 
         return (
