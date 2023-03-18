@@ -6,7 +6,7 @@ import useFetch from './useFetch'
 //require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 //export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
-export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=388f5944`;
+export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${import.meta.env.VITE_APP_MOVIE_API_KEY}`;
 
 //export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=388f5944&i=tt1285016`;
 
