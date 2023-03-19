@@ -10,6 +10,7 @@ const paginate = (followers: FollowerProps[]) => {
   });
 
   return newFollowers;
+  // testing revert
 };
 
 export default paginate;
