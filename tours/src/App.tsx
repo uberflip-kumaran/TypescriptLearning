@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Loading from "./Loading.js";
-import Tours from "./Tours.js";
+import Loading from "./Loading";
+import Tours from "./Tours";
 const url = "https://course-api.com/react-tours-project";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [tours, setTours] = useState([]);
 
-  const removeTour = (id) => {
-    const newTours = tours.filter((tour) => tour.id !== id);
+  const removeTour = (id: any) => {
+    const newTours = tours.filter((tour: any) => tour.id !== id);
     setTours(newTours);
   };
 
