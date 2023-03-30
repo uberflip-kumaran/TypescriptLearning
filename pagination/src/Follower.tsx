@@ -1,6 +1,15 @@
 import React from 'react'
 
-const Follower = ({ avatar_url, html_url, login }) => {
+export interface FollowerProp {
+  id: number;
+  avatar_url: string;
+  html_url: string;
+  key: number;
+  login: any;
+  editItem(id:number):void;
+}
+
+const Follower = ({ avatar_url, html_url, login }:FollowerProp) => {
   return (
     <article className='card'>
       <img src={avatar_url} alt={login} />
