@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from './SearchForm'
+import Form from './SearchForms'
 import Movies from './Movies'
 const Home = () => {
   return (
