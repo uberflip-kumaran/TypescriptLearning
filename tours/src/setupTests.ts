@@ -4,14 +4,14 @@
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
 
-// // src/setupTests.js
-// import { server } from "../__mock__/mockServer";
-// // Establish API mocking before all tests.
-// beforeAll(() => server.listen());
+import { server } from "../__mock__/mockServer";
 
-// // Reset any request handlers that we may add during the tests,
-// // so they don't affect other tests.
-// afterEach(() => server.resetHandlers());
+// Start mock server before any test
+beforeAll(() => server.listen());
 
-// // Clean up after the tests are finished.
-// afterAll(() => server.close());
+// Reset handlers to intial stage after each time run
+// So that any dynamically added handlers will not effect other tests.
+afterEach(() => server.resetHandlers());
+
+// Close mock server after all tests.
+afterAll(() => server.close());

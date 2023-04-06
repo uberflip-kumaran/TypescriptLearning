@@ -1,31 +1,7 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { setupServer } from 'msw/node';
-import { rest } from 'msw';
 
 import App from './App';
 import { mockTours } from '../__mock__/sampleTours';
-
-
-const handlers = [
-  rest.get('http://course-api.com/react-tours-project', (req, res, ctx) => {
-    return res(ctx.json(mockTours));
-  }),
-];
-
-const server = setupServer(...handlers);
-
-beforeAll(() => {
-  server.listen();
-});
-
-afterEach(() => {
-  server.resetHandlers();
-});
-
-afterAll(() => {
-  server.close();
-});
 
 test('it renders correct number of tours', async () => {
   // render the component
