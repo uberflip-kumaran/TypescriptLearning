@@ -1,14 +1,14 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 
-import Home from './Home';
-import Movie from './SingleMovie';
+import Home from "./Home";
+import Movie from "./SingleMovie";
 
-function App() {
+function App(): JSX.Element {
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='movies/:id' element={<Movie />} />
+      <Route path="/" element={<Home />} />
+      <Route path="movies/:id" element={<Movie />} />
     </Routes>
   );
 }
